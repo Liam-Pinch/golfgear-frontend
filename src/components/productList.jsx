@@ -14,17 +14,21 @@ const handleAddToBasket = (productId) => {
 };
 
 return(
-    <div>
-        <h2>Products</h2>
-        <ul>
-            {products.map(p =>(
-                <li key={p.id}>
-                    <strong>{p.name}</strong> - ${'£' + p.price.toFixed(2)}
-                    <button onClick={() => handleAddToBasket(p.id)}>Add to Basket</button>
-                </li>
-            ))}
-        </ul>
+    <>
+     <h2>Products</h2>
+        <div className="product-list">
+            {products.map(p => (
+                <div key={p.id} className="product">
+                <strong>{p.name}</strong> - £{p.price.toFixed(2)}
+                {p.description && <p>{p.description}</p>}
+                <button className="add-to-basket" onClick={() => handleAddToBasket(p.id)}>
+                Add to Basket
+            </button>
+        </div>
+    ))}
     </div>
+    
+    </>
 )
 
 }

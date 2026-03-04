@@ -8,8 +8,8 @@ export default function Logout({setToken}){
     }
 
     return (
-        <div>
-            <button onClick={handleLogout}>Logout</button>
+        <div className="logout">
+            <button className="logout-button" onClick={handleLogout}>Logout</button>
         </div>
     )
 }
